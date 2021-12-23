@@ -1,0 +1,11 @@
+.table {
+  @apply w-full;
+}
+
+.row > td {
+  @apply text-center h-10 text-sm border border-gray-100 border-opacity-70;
+}
+
+.row:nth-child(odd) {
+  @apply bg-gray-100;
+}

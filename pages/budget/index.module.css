@@ -1,0 +1,15 @@
+.heading {
+  @apply text-xl;
+}
+
+.body > input {
+  @apply h-10 text-sm mb-2 mr-2;
+}
+
+.body > select {
+  @apply flex h-10 w-52 bg-white uppercase border;
+}
+
+.body > button {
+  @apply border w-52 uppercase my-2 h-10 hover:bg-gray-300 hover:border-none;
+}
