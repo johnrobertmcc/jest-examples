@@ -21,7 +21,6 @@ export default function Budget() {
    * Function to handle the submit button and set the appropriate data.
    */
   function handleSubmit() {
-    console.log('jr data', data)
     if (
       data.option &&
       data.input &&
@@ -56,9 +55,9 @@ export default function Budget() {
     }
   }
 
-  console.log('jr data', data)
   return (
     <>
+      <p>This page shows how to test API calls from Next.js app routing.</p>
       <h1 className={styles.heading}>
         Available Budget - $ {tracker?.remainder}
       </h1>

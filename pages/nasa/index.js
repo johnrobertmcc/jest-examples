@@ -1,28 +1,31 @@
-import fetchPlanets from '@/functions/api/fetchPlanets'
+import fetchImgOfDay from '@/functions/api/fetchImgOfDay'
 import styles from './index.module.css'
 
 /**
- * Component to return the NASA planets.
+ * Component to return the NASA's Image of the Day.
  *
- * @param {object} props          The component as props.
- * @param {object} props.planets  The planet information.
- * @returns                       Returns the NASA test component.
+ * @param {object} props           The component as props.
+ * @param {object} props.imgOfDay  The image of the day.
+ * @returns                        Returns the NASA test component.
  */
-export default function NASA({planets}) {
-  // console.log('jr planets', planets)
+export default function NASA({imgOfDay}) {
   return (
     <div className={styles.page}>
-      {planets?.sol_keys.map((sol, i) => {
-        return <li key={i}>{planets[sol].Season}</li>
-      })}
+      <p>This page shows how to test API calls through server side props.</p>
+      {imgOfDay?.title && imgOfDay?.url && (
+        <>
+          <img src={imgOfDay?.url} alt={imgOfDay?.title} />
+          <h1>{imgOfDay.title}</h1>
+        </>
+      )}
+      {imgOfDay?.copyright && <p>&#169; {imgOfDay.copyright}</p>}
     </div>
   )
 }
 
 export async function getServerSideProps() {
-  const planets = await fetchPlanets()
-  console.log(planets)
+  const imgOfDay = await fetchImgOfDay()
   return {
-    props: {planets}
+    props: {imgOfDay}
   }
 }
