@@ -1,7 +1,8 @@
 /**
+ * The home page.
  *
- * @returns {Element} The index page.
+ * @returns {Element} The home page.
  */
 export default function Home() {
-  return <div className="flex">this is the index page</div>
+  return <div className="flex">this is the home page</div>
 }
