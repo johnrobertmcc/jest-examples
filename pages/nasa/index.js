@@ -11,7 +11,6 @@ import styles from './index.module.css'
 export default function NASA({imgOfDay}) {
   return (
     <div className={styles.page}>
-      <p>This page shows how to test API calls through server side props.</p>
       {imgOfDay?.title && imgOfDay?.url && (
         <>
           <img src={imgOfDay?.url} alt={imgOfDay?.title} />

@@ -57,7 +57,6 @@ export default function Budget() {
 
   return (
     <>
-      <p>This page shows how to test API calls from Next.js app routing.</p>
       <h1 className={styles.heading}>
         Available Budget - $ {tracker?.remainder}
       </h1>
