@@ -35,6 +35,8 @@
     "eslint-plugin-jsdoc": "^37.4.0",
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^27.4.5",
+    "jest-fetch-mock": "^3.0.3",
+    "jest-transform-stub": "^2.0.0",
     "markdownlint": "^0.24.0",
     "markdownlint-cli": "^0.30.0",
     "postcss": "^8.4.5",

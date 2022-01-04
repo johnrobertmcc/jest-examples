@@ -10,10 +10,10 @@ export default function TableHeader() {
     <thead className={styles.heading}>
       <tr>
         <th>
-          <abbr title="Where did this money go to or come from?">Place</abbr>
+          <abbr title="Where did this money go to or come from?">Source</abbr>
         </th>
         <th>
-          <abbr title="How did this money?">Source</abbr>
+          <abbr title="What is this money?">I/O</abbr>
         </th>
         <th>
           <abbr title="The money you have spent or earned.">Amount</abbr>

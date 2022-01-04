@@ -1,6 +1,7 @@
 import styles from './index.module.css'
 import {useState} from 'react'
 import Table from '@/components/global/Table'
+import calculateRemainder from '@/functions/helpers/calculateRemainder'
 
 /**
  * Component to return the Budget component with tests.
@@ -8,7 +9,7 @@ import Table from '@/components/global/Table'
  * @return {Element}   Renders the /budget page.
  */
 export default function Budget() {
-  const defaultData = {option: null, input: null, reason: null}
+  const defaultData = {option: 'none', input: null, reason: null}
   const [data, setData] = useState(defaultData)
   const [tracker, setTracker] = useState({
     receipts: [],
@@ -22,7 +23,6 @@ export default function Budget() {
    */
   function handleSubmit() {
     if (
-      data.option &&
       data.input &&
       data.option !== '-- Please select one --' &&
       data.option !== 'none'
@@ -34,7 +34,7 @@ export default function Budget() {
         } else {
           num = data.input * -1
         }
-        remainder = prev['remainder'] += num
+        remainder = calculateRemainder(prev['remainder'], num)
         return {
           ...prev,
           [data.option]: num,
@@ -60,12 +60,9 @@ export default function Budget() {
       <h1 className={styles.heading}>
         Available Budget - $ {tracker?.remainder}
       </h1>
-      <p>
-        This is an example of a budget application to show how --- tests can be
-        used. Add your income vs expenses and track your earnings.
-      </p>
       <div className={styles.body}>
         {tracker?.receipts.length > 0 && <Table receipts={tracker.receipts} />}
+        <br />
         <br />
         <h3 className={styles.title}>Please enter an expense:</h3>
         $
@@ -98,9 +95,11 @@ export default function Budget() {
               }
             })
           }
-          selected={data?.option || 'none'}
+          value={data?.option || 'none'}
         >
-          <option value="none">-- Please select one --</option>
+          <option value="none" disabled>
+            -- Please select one --
+          </option>
           <option value="income">income</option>
           <option value="output">expense</option>
         </select>

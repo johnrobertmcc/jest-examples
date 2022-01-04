@@ -4,11 +4,10 @@ import fetchVehicles from '@/functions/api/fetchSwapi'
  * Component to return the Star Wars vehicles.
  *
  * @param {object} props           The component as props.
- * @param {object} props.vehciles  The vehicles from swapi.
- * @returns                        Returns the Star Wars test component.
+ * @param {object} props.vehicles  The vehicles from swapi.
+ * @returns {Element}              Returns the Star Wars test component.
  */
 export default function StarWars({vehicles}) {
-  console.log('jr vehicle[0]', vehicles[0])
   return (
     <div>
       <ul>
