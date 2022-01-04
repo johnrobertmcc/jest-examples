@@ -20,7 +20,7 @@ export default function Navbar() {
           <Link href="/budget">Budget</Link>
         </li>
         <li className={styles.item}>
-          <Link href="/unknown">Unknown</Link>
+          <Link href="/starwars">Vehicles</Link>
         </li>
       </ul>
     </header>

@@ -4,5 +4,5 @@
  * @return {Element}   Renders the Footer component.
  */
 export default function Footer() {
-  return <footer>Created by J.R. McCann</footer>
+  return <footer></footer>
 }

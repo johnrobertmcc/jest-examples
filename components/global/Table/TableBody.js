@@ -16,7 +16,7 @@ export default function TableBody({receipts}) {
             <td>{receipt.reason ? receipt.reason : null}</td>
             <td>{receipt.source}</td>
             <td>{'$' + receipt.amount}</td>
-            <td>{dayjs(receipt.date).format('DD/MM/YYYY')}</td>
+            <td>{dayjs(receipt.date).format('MM/DD/YYYY')}</td>
           </tr>
         )
       })}

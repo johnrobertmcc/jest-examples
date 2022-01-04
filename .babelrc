@@ -1,7 +1,21 @@
 {
-  "presets": ["next/babel"],
+  "presets": [
+    "next/babel",
+    ["@babel/preset-env", {"targets": {"node": "current"}}]
+  ],
   "env": {
     "test": {
+      "presets": [
+        [
+          "next/babel",
+          {
+            "preset-env": {
+              "modules": "commonjs"
+            }
+          }
+        ],
+        "@babel/preset-env"
+      ],
       "plugins": ["@babel/plugin-transform-modules-commonjs"]
     }
   }
